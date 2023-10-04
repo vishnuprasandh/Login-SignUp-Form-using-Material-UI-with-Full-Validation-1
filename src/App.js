@@ -5,11 +5,12 @@ import Chip from "@mui/material/Chip";
 import FaceIcon from "@mui/icons-material/Face";
 import Paper from "@mui/material/Paper";
 import LockIcon from "@mui/icons-material/Lock";
-
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Switch from "@mui/material/Switch";
 import { useState } from "react";
-import Login from "./formControl/login";
-import Signup from "./formControl/signup";
+import Login from "../src/formControl/login";
+import Signup from "../src/formControl/signup";
+import Form from "../src/form/Form";
 
 function App() {
   const [checked, setChecked] = useState(true);
@@ -48,8 +49,13 @@ function App() {
 
         {checked ? <Login /> : <Signup />}
       </Paper>
+    
+          <Routes>
+            <Route path="/form" element={<Form />} />
+          </Routes>
     </div>
   );
 }
 
 export default App;
+
